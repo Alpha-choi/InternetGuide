@@ -6,10 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import kr.co.internetguide.command.BContentCommand;
-import kr.co.internetguide.command.BListCommand;
-import kr.co.internetguide.command.BWriteCommand;
 import kr.co.internetguide.command.Bcommand;
 
 @Controller
