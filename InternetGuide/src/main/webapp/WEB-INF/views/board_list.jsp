@@ -31,7 +31,7 @@
         <tbody>
           <tr>
             <td>1</td>
-            <td>이것은</td>
+            <td><a href="${ contextPath }/board_view">이것은</a></td>
             <td>Alvin</td>
             <td>2018-04-12</td>
             <td>300</td>
