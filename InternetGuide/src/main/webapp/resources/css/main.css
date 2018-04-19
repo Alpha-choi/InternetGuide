@@ -27,7 +27,7 @@ nav{
     box-shadow: none;
     height: auto;
 }
-nav .nav-wrapper{
+nav .nav-wrapper{ 
     padding-top: 30px;
     padding-bottom: 20px;
     box-sizing: content-box;
