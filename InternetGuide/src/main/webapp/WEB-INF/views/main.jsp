@@ -42,7 +42,7 @@
         <div class="card row board-row">
             <div class="col s12 l6 ask-col">
                 <ul id="ask">
-                    <h4>문의게시판</h4>
+                    <h4>문의게시판<a href=""><i class="material-icons right">add</i></a></h4>
                     <li class="ask-item">
                         <a href="" class="valign-wrapper">
                             <span class="link">문의사항이 들어갈 자리입니다.</span>
@@ -106,6 +106,7 @@
                     <h4>
                         <a onclick="toggleNotice();">공지사항</a> /
                         <a onclick="toggleTip();">인터넷 가이드 팁</a>
+                        <i class="material-icons right">add</i></a>
                     </h4>
                     <li class="tip-item">
                         <a href="" class="valign-wrapper">
