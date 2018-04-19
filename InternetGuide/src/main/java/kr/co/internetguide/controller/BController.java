@@ -66,6 +66,13 @@ public class BController {
 			System.out.println("board_write()");
 			return "board_write";
 		}
+		// board_view에서 내용을 눌렀을 떄 실행되는 메소드
+		// content를 보여준다.
+		@RequestMapping("/content_view")
+		public String content_view(Model model) {
+			System.out.println("content_view()");
+			return "content_view";
+		}
 		
 		// write_veiw에서 내용을 쓰고 완료를 눌렀을 때 실행되는 메소드
 		// board의 리스트를 보여준다.

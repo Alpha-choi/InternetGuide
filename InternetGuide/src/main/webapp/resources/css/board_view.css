@@ -1,7 +1,22 @@
-.content{
-	padding: 1%;
-	margin-bottom: 30px;
+
+.container{
+    width: 80%;
 }
-.comment{
-	padding: 1%;
+
+.container table{
+  min-height: 400px;
+}
+
+.container .pagination{
+  text-align: center;
+  margin-top:100px;
+}
+
+.container .btn{
+  margin-top: 20px;
+  float:right;
+}
+
+.pagination{
+  margin-bottom: 20px;
 }

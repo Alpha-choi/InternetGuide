@@ -1,7 +1,10 @@
+.card{
+  margin-top: 30px;
+  padding:5px 0px;
+}
 .card .row{
   padding-left: 2%;
   padding-right: 2%;
-  padding-bottom: 1%;
 }
 
 #textarea1{
@@ -12,4 +15,8 @@
 
 #textarea1:focus{
   border: 1.4px solid #26a69a;
+}
+
+.float{
+  float: right;
 }

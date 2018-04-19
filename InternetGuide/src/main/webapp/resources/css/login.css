@@ -1,0 +1,43 @@
+.card{
+  margin: 30px auto;
+  padding:10px 20px;
+}
+.field{
+  margin-bottom: 0.75rem;
+}
+.label{
+  margin-bottom: 0.5em;
+}
+.control{
+  font-size: 1rem;
+  position: relative;
+  text-align: left;
+}
+.input, .textarea{
+  background-color: #fff;
+  border-color: #dbdbdb;
+  color: #363636;
+  box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+  max-width: 100%;
+  width: 100%;
+}
+.help{
+  display: block;
+  font-size: .75rem;
+  margin-top: .25rem;
+}
+.help.is-success{
+  color: #23d160;
+}
+.help.is-danger{
+  color: #ff3860;
+}
+.control.has-icons-right .input, .control.has-icons-right .select select{
+  padding-right: 2.25em;
+}
+.control.has-icons-left .input, .control.has-icons-left .select select{
+  padding-left: 2.25em;
+}
+.input.is-danger, .textarea.is-danger{
+  border-color: #ff3860;
+}

@@ -13,7 +13,12 @@ public class UController {
 	
 	@RequestMapping("/signup")
 	public String signup (Model model) {
-		
+		System.out.println("signup()");
+		return "signup";
+	}
+	@RequestMapping("/login")
+	public String login (Model model) {
+		System.out.println("login()");
 		return "signup";
 	}
 	
