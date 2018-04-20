@@ -17,14 +17,11 @@
 	<div class="container">
 	    <div class="card">
 	      <div class="head">
-	        <h5>문의드립니다.</h5>
-	        <div class="detail">작성자 : Alvin &nbsp;&nbsp;&nbsp;&nbsp;작성일 : 2018-04-12</div><div class="hit">조회수 : 300</div>
+	        <h5>${ model.title }</h5>
+	        <div class="detail">작성자 : ${ model.writer } &nbsp;&nbsp;&nbsp;&nbsp;작성일 : ${ model.date }</div><div class="hit">조회수 : ${ model.hit }</div>
 	      </div>
 	      <div class="content">
-	        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	        <br><br><br>
-	        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br><br>
-	        <h4><storng>What's going on?<strong></h4>
+	        ${ model.content }
 	      </div>
 	    </div>
 	    <div class="buttons">
@@ -32,8 +29,8 @@
 	        <a class="waves-effect waves-light btn blue" href="${ contextPath }/board_view">목록보기</a>
 	      </div>
 	      <div class="inline float">
-	        <a class="waves-effect waves-light btn blue" href="board_write.html">수정하기</a>
-	        <a class="waves-effect waves-light btn red" href="board_view.html">삭제하기</a>
+	        <a class="waves-effect waves-light btn blue" href="${ contextPath }/board_modify?title=${ model.title }">수정하기</a>
+	        <a class="waves-effect waves-light btn red" href="${ contextPath }/board_delete">삭제하기</a>
 	      </div>
 	    </div>
 		<div class="comments">

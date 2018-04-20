@@ -22,7 +22,7 @@ public class BModifyPullCommand implements Bcommand{
 		BDao dao = new BDao();
 		BDto dto = dao.view(title);
 		
-		model.addAttribute("dto",dto);
+		model.addAttribute("model",dto);
 	}
 
 }

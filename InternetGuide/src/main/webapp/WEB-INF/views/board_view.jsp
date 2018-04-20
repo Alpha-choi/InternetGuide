@@ -27,46 +27,18 @@
         </thead>
 
         <tbody>
+        <c:forEach var="model" items="${list}">
           <tr>
-            <td>1</td>
-            <td><a href="${ contextPath }/content_view">문의드립니다.</a></td>
-            <td>Alvin</td>
-            <td>2018-04-12</td>
-            <td>300</td>
+            <td>${ model.id }</td>
+            <td><a href="${ contextPath }/content_view?title=${ model.title }">${ model.title }</a></td>
+            <td>${ model.writer }</td>
+            <td>${ model.date }</td>
+            <td>${ model.hit }</td>
           </tr>
-          <tr>
-            <td>2</td>
-            <td>참좋은곳</td>
-            <td>Alvin</td>
-            <td>2018-04-09</td>
-            <td>31</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>novelus</td>
-            <td>Alvin</td>
-            <td>2018-03-22</td>
-            <td>27</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>IPTV는 어디서?</td>
-            <td>Alvin</td>
-            <td>2018-03-02</td>
-            <td>48</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>인터넷가이드에서!</td>
-            <td>Alvin</td>
-            <td>2017-11-12</td>
-            <td>24</td>
-          </tr>
+          </c:forEach>
         </tbody>
       </table>
-      <button class="btn waves-effect waves-light blue" onclick="location.href='board_write.html'" type="submit" name="action">글쓰기
-        <i class="material-icons right">send</i>
-      </button>
+      <a class="waves-effect waves-light btn blue" href="${ contextPath }/board_write">button</a>
       <ul class="pagination">
         <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
         <li class="active"><a href="#!">1</a></li>

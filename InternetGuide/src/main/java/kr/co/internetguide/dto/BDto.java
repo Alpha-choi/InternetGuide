@@ -26,6 +26,14 @@ public class BDto {
 		this.content = content;
 		this.writer = writer;
 	}
+	public BDto(int id, Timestamp date, String title, String content, String writer, int hit ) {
+		this.id = id;
+		this.date = date;
+		this.hit = hit;
+		this.title = title;
+		this.content = content;
+		this.writer = writer;
+	}
 	public Timestamp getDate() {
 		return date;
 	}

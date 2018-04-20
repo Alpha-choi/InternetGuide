@@ -25,6 +25,47 @@ public class BDao {
 			e.printStackTrace();
 		}
 	}
+	public ArrayList<BDto> list() {
+		
+		ArrayList<BDto> dtos = new ArrayList<BDto>();
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		
+		try {
+			connection = dataSource.getConnection();
+			
+			String query = "select * from board";
+			preparedStatement = connection.prepareStatement(query);
+			resultSet = preparedStatement.executeQuery();
+			
+			while (resultSet.next()) {
+				int id = resultSet.getInt("id");
+				Timestamp date = resultSet.getTimestamp("date");
+				String title = resultSet.getString("title");
+				String content = resultSet.getString("content");
+				String writer = resultSet.getString("writer");
+				int hit = resultSet.getInt("hit");
+				
+				BDto dto = new BDto(id,date,title,content,writer,hit);
+				dtos.add(dto);
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			try {
+				if(resultSet != null) resultSet.close();
+				if(preparedStatement != null) preparedStatement.close();
+				if(connection != null) connection.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+				e2.printStackTrace();
+			}
+		}
+		return dtos;
+	}
 
 	public void write(String title, String content, String writer) {
 		// TODO Auto-generated method stub
@@ -146,7 +187,7 @@ public class BDao {
 		}
 	}
 
-	public void modify(String title, String content) {
+	public void modify(String title_update, String content,String title) {
 		// TODO Auto-generated method stub
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -156,7 +197,7 @@ public class BDao {
 			
 			String query = "update board set title = ?, content = ? where title = ?";
 			preparedStatement = connection.prepareStatement(query);
-			preparedStatement.setString(1, title);
+			preparedStatement.setString(1, title_update);
 			preparedStatement.setString(2, content);
 			preparedStatement.setString(3, title);
 			int rn = preparedStatement.executeUpdate();

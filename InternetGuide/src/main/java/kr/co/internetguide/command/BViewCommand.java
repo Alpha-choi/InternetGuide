@@ -29,7 +29,7 @@ public class BViewCommand implements Bcommand{
 		dao.hit(title);
 		BDto dto = dao.view(title);
 		
-		model.addAttribute("dto",dto);
+		model.addAttribute("model",dto);
 		
 		
 	}

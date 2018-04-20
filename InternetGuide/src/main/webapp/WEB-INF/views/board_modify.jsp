@@ -1,4 +1,3 @@
-<%@page import="kr.co.internetguide.dto.UDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -15,33 +14,30 @@
 </head>
 <body>
 <%@ include file="nav.jsp" %>
-<%
-UDto user = (UDto)session.getAttribute("user");
-%>
 	<div class="container">
     <div class="card">
       <div class="row">
-        <form class="col s12" method="post" action="/write">
+        <form class="col s12">
           <h4>상담예약게시판</h4>
           <div class="row">
             <div class="input-field col s6"> 
-              <textarea id="icon_prefix2" class="materialize-textarea" name="title"></textarea>
+              <textarea id="icon_prefix2" class="materialize-textarea" name="title_update">${ model.title }</textarea>
               <label for="icon_prefix2">타이틀을 입력해주세요.</label>
-              <input type="hidden" name = "writer" value="<%=user.getName()%>">
+              <input type="hidden" name = "title" value="${ model.title }">
             </div>
           </div>
         </form>
       </div>
       <div class="row">
-        <form class="col s12" method="post" action="/write">
+        <form class="col s12">
           <div class="row">
             <div class="input-field col s12">
               <!-- <div id="toolbar-container"></div> -->
-              <textarea id="textarea1" name="content"></textarea>
+              <textarea id="textarea1" name="content">${ model.content }</textarea>
             </div>
           </div><
           <a class="waves-effect waves-light btn blue" href="${ contextPath }/board_view">목록보기</a>
-          <a class="waves-effect waves-light btn float blue" id="submit">저장하기</a>
+          <a class="waves-effect waves-light btn float blue" href="${ contextPath }/modify">수정하기</a>
         </form>
       </div>
     </div>
