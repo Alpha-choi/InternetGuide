@@ -10,73 +10,66 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="${ contextPath }/resources/css/materialize.min.css">
 	<link rel="stylesheet" href="${ contextPath }/resources/css/main.css">
-	<link rel="stylesheet" href="${ contextPath }/resources/css/login.css">
+	<link rel="stylesheet" href="${ contextPath }/resources/css/form.css">
 </head>
 <body>
-<%@ include file="nav.jsp" %>
-	<div class="container card">
-    <form id ="signup">
-      <div class="field">
-        <label class="label">이름</label>
-        <div class="control">
-          <input class="input" type="text" placeholder="Text input" required>
+	<%@ include file="nav.jsp" %>
+	<div class="login-wrapper">
+    <h3>아직 회원이 아니신가요?
+      <a href="signup.html">회원가입</a>
+    </h3>
+    <div class="row">
+      <form id="login-form" class="center-form">
+        <div class="field">
+          <label class="label">아이디</label>
+          <p class="control">
+            <input class="input" type="text" placeholder="아이디">
+            <span class="icon">
+              <i class="material-icons">account_circle</i>
+            </span>
+          </p>
         </div>
-      </div>
-
-      <div class="field">
-        <label class="label">닉네임</label>
-        <div class="control">
-          <input class="input" type="text" placeholder="Text input" required>
+        <div class="field">
+          <label class="label">비밀번호</label>
+          <p class="control">
+            <input class="input" type="password" placeholder="비밀번호">
+            <span class="icon">
+              <i class="material-icons">vpn_key</i>
+            </span>
+          </p>
         </div>
-      </div>
-
-      <div class="field">
-        <label class="label">아이디</label>
-        <div class="control">
-          <input class="input is-success" type="text" placeholder="Text input" required>
-          <span class="icon is-small is-left">
-            <i class="fas fa-user"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-check"></i>
-          </span>
-        </div>
-        <p class="help is-success">This username is available</p>
-      </div>
-
-      <div class="field">
-        <label class="label">비밀번호</label>
-        <div class="control">
-          <input class="input is-danger" type="password" placeholder="Email input" required>
-          <span class="icon is-small is-left">
-            <i class="fas fa-envelope"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-exclamation-triangle"></i>
+        <div class="field button-field">
+          <button type="submit" class="button">로그인</button>
+          <span class="find">비밀번호를 잊어버리셨나요?
+            <a href="">비밀번호 찾기</a>
           </span>
         </div>
-        <p class="help is-danger">This email is invalid</p>
-      </div>
-      <div class="field">
-        <label class="label">비밀번호 확인</label>
-        <div class="control">
-          <input class="input is-danger" type="password" placeholder="Email input" required>
-          <span class="icon is-small is-left">
-            <i class="fas fa-envelope"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-exclamation-triangle"></i>
-          </span>
-        </div>
-        <p class="help is-danger">This email is invalid</p>
-      </div>
-      <a class="waves-effect waves-light btn float">회원가입완료</a>
-    </form>
+      </form>
+    </div>
   </div>
   <%@ include file="footer.jsp" %>
-  <script type="text/javascript" src="${ contextPath }/resouces/js/jquery-3.2.0.min.js"></script>
-  <script type="text/javascript" src="${ contextPath }/resouces/js/materialize.min.js"></script>
-  <script type="text/javascript" src="${ contextPath }/resouces/js/main.js"></script>
+  <%@ include file="modal.jsp" %>
+  <script type="text/javascript" src="${ contextPath }/resources/js/jquery-3.2.0.min.js"></script>
+  <script type="text/javascript" src="${ contextPath }/resources/js/materialize.min.js"></script>
+  <script type="text/javascript" src="${ contextPath }/resources/js/main.js"></script>
+  <script type="text/javascript" src="${ contextPath }/resources/js/form.js"></script>
+  <script>
+    $("#login-form").submit(function (event) {
+      event.preventDefault();
+      var data = $("#login-form").serialize();
+      $.ajax({
+        type: 'POST',
+        url: '',
+        data: data,
+        success: function (data, status, jqXHR) {
+
+        },
+        error: function (jqXHR, status, error) {
+          modal(error);
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

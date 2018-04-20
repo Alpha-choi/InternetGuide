@@ -29,7 +29,7 @@
             </li>
             <li class="banner-card">
                 <a class="card-content kakao">
-                    <img src="${ contextPath }/resources/image/kakao.png" width="60px">
+                    <img src="image/kakao.png" width="60px">
                     <span>@인터넷가이드</span>
                     <p>
                         인터넷가이드랑 카카오톡 플러스 친구를 맺으세요!
@@ -42,7 +42,11 @@
         <div class="card row board-row">
             <div class="col s12 l6 ask-col">
                 <ul id="ask">
-                    <h4>문의게시판<a href=""><i class="material-icons right">add</i></a></h4>
+                    <h4>문의게시판
+                        <a href="">
+                            <i class="material-icons right">add</i>
+                        </a>
+                    </h4>
                     <li class="ask-item">
                         <a href="" class="valign-wrapper">
                             <span class="link">문의사항이 들어갈 자리입니다.</span>
@@ -106,7 +110,8 @@
                     <h4>
                         <a onclick="toggleNotice();">공지사항</a> /
                         <a onclick="toggleTip();">인터넷 가이드 팁</a>
-                        <i class="material-icons right">add</i></a>
+                        <a href=""><i class="material-icons right">add</i>
+                        </a>
                     </h4>
                     <li class="tip-item">
                         <a href="" class="valign-wrapper">
@@ -279,5 +284,28 @@
     <script type="text/javascript" src="${ contextPath }/resources/js/jquery-3.2.0.min.js"></script>
     <script type="text/javascript" src="${ contextPath }/resources/js/materialize.min.js"></script>
     <script type="text/javascript" src="${ contextPath }/resources/js/main.js"></script>
+    <script>
+        var btic = '#1EBCD3';
+        var nitems = $(".notice-item");
+        var titems = $(".tip-item");
+        var ntitle = $('#notice h4 a')[0];
+        var ttitle = $('#notice h4 a')[1];
+        titems.css('display', 'none')
+        ntitle.style.color = btic;
+
+        function toggleNotice() {
+            titems.css('display', 'none');
+            nitems.css('display', 'list-item');
+            ntitle.style.color = btic;
+            ttitle.style.color = 'black';
+        }
+
+        function toggleTip() {
+            nitems.css('display', 'none');
+            titems.css('display', 'list-item');
+            ttitle.style.color = btic;
+            ntitle.style.color = 'black';
+        }
+    </script>
 	</body>
 </html>
