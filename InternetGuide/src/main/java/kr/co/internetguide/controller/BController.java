@@ -52,12 +52,12 @@ public class BController {
 	
 		//board를 눌렀을 떄 실행되는 메소드
 		// board의 리스트를 보여준다.
-		@RequestMapping("/board_list")
+		@RequestMapping("/board_view")
 		public String list(Model model) {
-			System.out.println("board_list()");
+			System.out.println("board_view()");
 			command = new BListCommand();
 			command.execute(model);
-			return "board_list";
+			return "board_view";
 		}
 		
 		
